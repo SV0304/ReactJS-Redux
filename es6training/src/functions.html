@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning ES6 Functions</title>
+</head>
+<body>
+<script type="text/javascript">
+	//Default Params
+
+	function add(a,b=1){
+		return a+b;
+	}
+	console.log(add(4));//5
+	console.log(add(4,2));//6
+
+	//we can pass expressions or functions in parameters
+	function addAgain(a,b=add(2,3)){
+		return a+b;
+	}
+	console.log(addAgain(2));
+
+	function myFunc(x=1,y,z=3){
+		console.log(x,y,z);
+	}
+	myFunc();
+	//optional parameters
+	function calcTaxES6(income, state="TELANGANA"){
+		console.log("ES6 Calculating tax for the resident of "+state+" with the income "+income);
+	}
+	calcTaxES6(50000);
+</script>
+</body>
+</html>

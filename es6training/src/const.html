@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ES6 constants</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const x = 12;
+			console.log(x);
+			/*const x = 13; *///throws error & stops execution
+			if(true){
+				const x = 13;
+				const y = 12;
+				console.log("inside block x="+x);
+				console.log("inside block y="+x);
+			}
+			const y = 13;
+			console.log("outside block x="+x);
+			console.log("outside block y="+x);
+		</script>
+	</body>
+</html>

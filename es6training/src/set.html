@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 learning set</title>
+</head>
+<body>
+<script type="text/javascript">
+	var set = new Set();
+	set.add(44);
+	set.add({x:12});
+	set.add("text");
+	console.log(set.has("text"));
+	set.add(44);//set doesnot allow duplicate values unlike array
+
+	for(let i of set){
+		console.log(i);
+	}
+
+	console.log("before delete ",set);
+	//delete a key
+	set.delete(44);
+	console.log("after delete ",set);
+
+	var set1 = new Set([1, 2, 3, 4, 5]);
+	console.log(set1.size);//5
+	var set2 = new Set(set.values());//cloning of sets
+	console.log(set2);
+</script>
+</body>
+</html>

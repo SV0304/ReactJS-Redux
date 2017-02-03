@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function createSri(){
+		let name = "Sri";
+		let color = "White";
+		return {name, color};
+	}
+
+	alert(createSri().name+"-"+createSri().color);
+
+var roles = {
+	type:"Admin",
+	displayType: function(){
+		console.log(this.type);
+	}
+}
+
+var super_role = Object.create(roles);
+super_role.displayType();
+
+
+var guest_role = Object.create(roles);
+guest_role.type="Guest";
+guest_role.displayType();
+
+
+var det = {name:"Shaju",ID:"222222"};
+var copy = Object.assign({},det);
+console.log(copy);
+for(let val in copy){
+	console.log(copy[val]);
+}
+
+var o1 = {a:10};
+var o2 = {b:20};
+var o3 = {c:30};
+var obj = Object.assign(o1,o2,o3);
+console.log(obj);//{a:10,b:20,c:30}
+console.log(o1);//{a:10,b:20,c:30}
+
+
+var a = {name:"Shaju",age:28};
+console.log("a before change "+a.name);
+var b = Object.assign({},a,{name:"Varghese"});
+console.log("a after change in b "+a.name);
+console.log("b "+b.name);
+a.name = "Shaju II";
+console.log("a after change in a "+a.name);
+console.log("b after change in a "+b.name);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 learning spread operator</title>
+</head>
+<body>
+<script type="text/javascript">
+	function function_one(...args){
+		console.log(args);
+		console.log(args.length);
+	}
+
+	function_one(1,4);
+	function_one(1,4,7);
+	function_one(1,4,7,8);
+	
+	//using of rest parameters
+	function function_two(a, b, ...args){
+		console.log(args);
+		console.log(args.length);
+	}// args holds only 7 & 9
+	function_two(1,5,7,9);
+
+	//using spread parameters
+	function calcTaxSpread(customer1, customer2, customer3, income){
+		console.log("ES6 Calculating tax for customers with the income "+income);
+		console.log("Processing ", customer1, customer2, customer3);
+	}
+
+	var customers = ["Ravi","Raj","Ram"];
+	calcTaxSpread(...customers,50000);//using spread operator in function invoke
+	var income = [40000, 10000, 20000];
+
+	//combination of rest & spread operator
+	function calcTaxSpread2(customer1, customer2, customer3, ...income){
+		console.log("ES6 Calculating tax for customers with the income ",income);
+		console.log("Processing ", customer1, customer2, customer3);
+	}
+	calcTaxSpread2(...customers, income[0], income[1], income[2]);
+
+</script>
+</body>
+</html>

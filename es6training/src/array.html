@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var alpha = ["a","b","c","d"];
+			var numeric = [1,2,3,4];
+			var alphanumeric = alpha.concat(numeric);
+			console.log("Alphanumeric ="+alphanumeric);
+			console.dir(alphanumeric);
+			function isBigEnough(element, index, array){
+				return (element>=10);
+			}
+
+			var passed = [12, 5, 8, 130, 44].every(isBigEnough);
+			console.log("Test value ="+passed);
+
+			var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+			console.log("Filter value: "+filtered);
+			console.dir(filtered);
+
+			var nums = [1,2,3,4,5];
+			nums.forEach(function(val,indx){
+				console.log(val);
+			});
+			nums.reverse();
+			nums.forEach(function(val,indx){
+				console.log(val);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 learning class in details</title>
+</head>
+<body>
+<script type="text/javascript">
+	class Student{
+		constructor(name,age){
+			this.name = name;
+			this._age = age;
+		}
+
+		getName(){
+			return this.name;
+		}
+		setName(value){
+			this.name = value;
+		}
+
+		set age(value){
+			this._age = value;
+		}
+
+		get age(){
+			return this._age;
+		}
+	}	
+
+	var S1 = new Student("Shaju",28);
+	console.log("name="+S1.getName());
+	console.log("age="+S1.age);
+
+	class Person extends Student{
+		constructor(name,age,citizen){
+			super(name,age);
+			this.citizen = citizen;
+		}
+
+		getCitizen(){
+			return this.citizen;
+		}
+		setCitizen(citizen){
+			this.citizen = citizen;
+		}
+		getName(){
+			return super.getName();
+		}
+	}
+
+	var p1 = new Person("Shaju",35,"INDIAN");
+	console.log(p1.getCitizen());
+	console.log(p1.getName());
+</script>
+</body>
+</html>

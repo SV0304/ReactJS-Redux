@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning ES6</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			let x=10; //global scope
+			if(true){
+				let y = 20; //block scope using let
+				console.log("y="+y);
+				console.log("x="+x);
+			}
+			console.log(y);//throws error saying y is not defined
+		</script>
+	</body>
+</html>

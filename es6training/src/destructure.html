@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	/* Array Destructuring */
+	function someFunct(){
+  		return [1,2,3,4,5,6];
+	}
+
+	var q,w,e,r,t,y;
+	[q,,e,,t,y] = someFunct();
+	console.log(y);//y is 6
+</script>
+<script type="text/javascript">
+	/*Object Destructing*/
+
+	function getStock(){
+		return {
+			symbol:"Verizon",
+			price:100.00
+		}
+	}
+
+	let {symbol, price} = getStock();
+	console.log(`The price of ${symbol} is ${price}`);
+</script>
+<script type="text/javascript">
+	/*Destructuring nested objects */
+	let msft = {
+		symbol:"Yahoo",
+		lastPrice:50.00,
+		exchange:{
+			name:"NASDAQ",
+			tradingHours:"9:30am-4:00pm"
+		}
+	}
+
+	function printStockInfo(stock){
+		let{symbol,exchange:name} = stock;//declares symbol & name only, exchange is not defined
+		console.log(`The ${symbol} stock is traded at ${name}`);
+		console.dir(exchange);//throws an error saying exchange is not defined
+	}
+	printStockInfo(msft);
+
+
+
+	
+</script>
+</body>
+</html>

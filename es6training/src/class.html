@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning ES6 Class</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	class Employee{
+		constructor(name,salary){
+			this.name = name;
+			this.salary = salary;
+		}
+		show(){
+			console.log(this.name+this.salary);
+		}
+	}
+
+	var e1 = new Employee("Shaju",5000);
+	e1.show();
+	var isEmployee = e1 instanceof Employee;
+	console.log("isEmployee="+isEmployee);
+
+
+</script>
+</body>
+</html>

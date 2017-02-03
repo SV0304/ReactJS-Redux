@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 learning map</title>
+</head>
+<body>
+<script type="text/javascript">
+	var map = new Map();
+	map.set("1",13);
+	map.set("2",13);
+	console.log(map.get("1"));
+	map.set("1",12);
+	console.log("after change ",map.get("1"));
+	console.log(map.has("1"));
+	for(var i of map){
+		console.log(i);
+	}
+	//delete all keys 
+	map.clear();
+
+	var map1 = new Map([[1,2],[4,5]]);
+	console.log(map1.size);
+</script>
+</body>
+</html>

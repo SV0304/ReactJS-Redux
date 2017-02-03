@@ -1,0 +1,12 @@
+[
+	{
+		"userId":"test",
+		"pwd":"test",
+		"name":"Test"
+	},
+	{
+		"userId":"admin",
+		"pwd":"admin123",
+		"name":"Admin"
+	}
+]

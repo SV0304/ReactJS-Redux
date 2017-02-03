@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 learning Overriding</title>
+</head>
+<body>
+<script type="text/javascript">
+	"use strict";
+	class Tax{
+		constructor(income){
+			this.income = income;
+		}
+		calculateFedralTax(){
+			console.log("calculating fedral tax for income ${this.income}");
+		}
+
+		calcMinTax(){
+			console.log("In Tax. Calculating min tax");
+			return 123;
+		}
+	}
+
+	class NJTax extends Tax{
+		constructor(income, stateTaxPercent){
+			super(income);
+			this.stateTaxPercent = stateTaxPercent;
+		}
+
+		calculateStateTax(){
+			console.log("Calculating state tax for income ${this.income}");
+		}
+
+		calcMinTax(){
+			super.calcMinTax();
+			console.log("calculating NJTax. Adjusting min tax");
+		}
+	}
+
+	var theTax = new NJTax(50000,6);
+	theTax.calculateFedralTax();
+	theTax.calculateStateTax()
+	theTax.calcMinTax();
+
+	var theTax2 = new Tax(30000);
+	theTax.calcMinTax.call(theTax2);
+
+</script>
+</body>
+</html>
